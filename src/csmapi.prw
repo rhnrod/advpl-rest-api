@@ -23,7 +23,7 @@ WsRestful clientes Description 'API para consultar clientes na tabela SA1' FORMA
 		Description 'Inclui um novo cliente na tabela SA1' WSSyntax '/'	Path '/'								;
 		PRODUCES APPLICATION_JSON
 	WsMethod PUT ATUALIZAR																						;
-		Description 'Atualizar dados de um cliente na tabela SA1' WSSyntax '/{id}/{loja}' Path '/{id}/{loja}'	;
+		Description 'Atualiza os dados de um cliente na tabela SA1' WSSyntax '/{id}/{loja}' Path '/{id}/{loja}'	;
 		PRODUCES APPLICATION_JSON
 	WsMethod DELETE DELETAR																						;
 		Description 'Apaga o registro de um cliente na tabela SA1' WSSyntax '/{id}/{loja}' Path '/{id}/{loja}'	;
