@@ -35,14 +35,12 @@
 6. [Construindo um Método DELETE](#construindo-um-método-delete)
 ---
 ## Introdução, Links e Referências
-> 💾 **INFORMAÇÕES PARA MELHOR APROVEITAR ESTE REPOSITÓRIO**
->   
->  - Nos exemplos de sintaxe, os itens que aparecem entre colchetes são items opcionais. (i.e. `WsData [AS Integer]`)
+💾 **INFORMAÇÕES PARA MELHOR APROVEITAR ESTE REPOSITÓRIO**
+Este repositório foi criado com o propósito de servir como base para meus estudos em ADVPL/ADVPL MVC/TLPP. O processo de documentar o aprendizado (*public learning*) me ajuda a fixar conceitos importantes e ainda me garante acesso a materiais apropriados para meu trabalho no dia-a-dia. Sinta-se livre para explorá-lo e espero que lhe seja útil!
+- Nos exemplos de sintaxe, os itens que aparecem entre colchetes são items opcionais. (i.e. `WsData [AS Integer]`)
 
-> 🔗 **LINKS ÚTEIS**
->
-> 1. [Documentação Oficial de REST - TOTVS TDN](https://tdn.totvs.com/display/public/framework/03.+Comandos+REST)
-> 2. 
+🔗 **LINKS ÚTEIS**
+1. [Documentação Oficial de REST - TOTVS TDN](https://tdn.totvs.com/display/public/framework/03.+Comandos+REST)
 
 ## Includes
 A primeira coisa a se levar em consideração em um código fonte em ADVPL são os [**includes**](# "arquivos *.ch que importam códigos de outros fontes pro fonte atual."). 
@@ -109,7 +107,40 @@ O nome informado será utilizado para manipular o conteúdo da variável nos mé
 
 Quando passamos a flag `OPTIONAL` indicamos que aquele parâmetro pode ou não ser enviado na requisição que faremos.
 
+> ⚠️ **ATENÇÃO!**
+> Caso um parâmetro WsData seja declarado, mas não tenha nenhum Método recebendo (através de um WsReceive), isso desencadeará um erro na hora de fazer a requisição. 
+
 #### WSMethod
+#### Sintaxe
+```
+WSMETHOD <cVerb> [cId] DESCRIPTION <cDescription> [WSSYNTAX <cSintax>] [PATH <cPath>] [TTALK <cTTalkVersion>]
+```
+##### WsMethod
+> 🏁  **Parâmetro Obrigatório** - Tipo: -
+>
+> Indica o tipo de método que vamos declarar: **PUT**, **POST**, **GET** ou **DELETE**.
+
+Caso deseje usar o mesmo método com características diferentes (i.e. um método GET para puxar todos os registros e outro para selecionar um registro por Id) é preciso declarar um Id. Veremos isso nos exemplos do método GET.
+##### Description
+> 🏁  **Parâmetro Obrigatório** - Tipo: C (String)
+>
+> Declara a descrição do método REST.
+##### WsSyntax
+> Tipo: C (String)
+>
+> Sintaxe HTTP da chamada REST. Esta informação é utilizada apenas para documentação do REST.
+
+Basicamente é o mesmo endereço declarado no parâmetro `Path`.
+##### Path
+> Tipo: C (String)
+>
+> Definição do endpoint que irá acionar aquele método.
+
+Não é considerado um parâmetro obrigatório, mas vai passar como endpoint padrão o endereço ``'/'``;
+##### TTalk
+> Tipo: C (String)
+>
+>Valor "v1" para sinalizar que o método utiliza o padrão de mensagem de erro do TTALK.	
 
 ### Entendendo os métodos
 #### GET
