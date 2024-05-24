@@ -108,6 +108,7 @@ O nome informado será utilizado para manipular o conteúdo da variável nos mé
 Quando passamos a flag `OPTIONAL` indicamos que aquele parâmetro pode ou não ser enviado na requisição que faremos.
 
 > ⚠️ **ATENÇÃO!**
+>
 > Caso um parâmetro WsData seja declarado, mas não tenha nenhum Método recebendo (através de um WsReceive), isso desencadeará um erro na hora de fazer a requisição. 
 
 #### WSMethod
