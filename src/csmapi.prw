@@ -8,7 +8,6 @@
 // +====================================================================+
 
 #include 'totvs.ch'
-#include 'fwmvcdef.ch'
 #include 'restful.ch'
 
 WsRestful clientes Description 'API para consultar clientes na tabela SA1' FORMAT APPLICATION_JSON
