@@ -13,7 +13,7 @@
 ---
 
 **Índice**
-1. [Introdução, Links e Referências](#)
+1. [Introdução, Links e Referências](#introdução-links-e-referências)
 2. [Includes](#includes)
 2. [WsRestFul – Entendo a classe](#wsrestful--entendendo-a-classe)
     1. [Entendendo o cabeçalho](#entendendo-o-cabeçalho)
@@ -43,7 +43,7 @@ Este repositório foi criado com o propósito de servir como base para meus estu
 1. [Documentação Oficial de REST - TOTVS TDN](https://tdn.totvs.com/display/public/framework/03.+Comandos+REST)
 
 ## Includes
-A primeira coisa a se levar em consideração em um código fonte em ADVPL são os [**includes**](# "arquivos *.ch que importam códigos de outros fontes pro fonte atual."). 
+A primeira coisa a se levar em consideração em um código fonte em ADVPL são os [**includes**](#includes "arquivos *.ch que importam códigos de outros fontes pro fonte atual."). 
 ![Includes necessários para consumir a API](/imgs/includes.png)
 Neste fonte específico fazemos uso dos includes `totvs.ch` e `restful.ch`. O primeiro traz consigo diversas funcionalidades padrão sendo indispensável a quase qualquer fonte ADVPL. Já o segundo, como o próprio nome sugere, é responsável por adicionar as funcionalidades voltadas para o consumo da API REST.
 
@@ -163,6 +163,20 @@ Indica o nome da classe, do serviço, que o método atual pertence. O serviço f
 ---
 ## Construindo um Método GET
 ![Exemplo 1 de declaração de um método GET](/imgs/method_GET.png)
+Como vimos anteriormente, primeiro é necessário [declarar o método GET na construção da classe WsRestful](#wsrestful--entendendo-a-classe), antes de poder construir a lógica do método.
+
+Uma vez declarado(s) o(s) método(s) GET, vamos à sintaxe básica:
+```
+WSMETHOD <cVerb> [cId] [QUERYPARAM <QueryParms>] [PATHPARAM <PathParms>] [HEADERPARAM <HeaderParms>] WSRESTFUL <WsRestFul>
+```
+O `WsMethod` será utilizado para declarar o método HTTP que vamos utilizar (nesse caso, **GET**).
+O parâmetro `cId` pode ou não ser declarado, mas é melhor fazermos para identificar com mais precisão a utilidade do método e, também, pelo fato que caso eu passe mais de um método GET em um único serviço REST, torna-se obrigatório definir IDs diferentes para a identificação de cada método.
+>💡 **DISCLAIMER**
+>
+>No exemplo acima, omiti o ID deliberadamente, para fins didáticos, mas farei adiante um exemplo chamando dois IDs distintos.
+
+Ao invés de utilizar os parâmetros `QueryParms`, `URLParms` e `HeaderParms`.
+
 ## Construindo um Método POST
 ## Construindo um Método PUT
 ## Construindo um Método DELETE
