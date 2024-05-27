@@ -143,13 +143,26 @@ Não é considerado um parâmetro obrigatório, mas vai passar como endpoint pad
 >
 >Valor "v1" para sinalizar que o método utiliza o padrão de mensagem de erro do TTALK.	
 
-### Entendendo os métodos
-#### GET
-#### POST
-#### PUT
-#### DELETE
+### Entendendo a declaração dos métodos
+#### WsMethod
+> Declara o método a ser utilizado. Caso deseje criar mais de uma chamada para um mesmo método é necessário passar um Id para cada rota.
 
+Por exemplo:
+```
+WsMethod GET ALL Description "Chama todos os registros" WsSyntax '/' Path '/'
+WsMethod GET UNIQUE Description "Chama um registro específico" WsSyntax '/{id}' Path '/{id}'
+```
+Neste caso, o primeiro `WsMethod GET` possui o Id `ALL` e é responsável por chamar todos os registros de uma tabela. Já o segundo método `GET` possui o Id `UNIQUE` e será responsável por chamar apenas um registro do banco de dados.
+#### WsSyntax
+Ver [WsSyntax](#wssyntax).	
+#### WsReceive (QueryParms/PathParms/HeaderParms)
+Indica os parâmetros que iremos receber (geralmente declarado como `WsData`) e que podem ser `QueryParms`, `Pathparms` ou `HeaderParms`. Caso deseje, pode trocar o WsReceive por um desses métodos, mas o WsReceive é mais abrangente e permite receber parâmetros diversos enquanto o QueryParms, PathParms e HeaderParms são específicos - sendo mais utilizados para facilitar a leitura do código.
+#### WsRestful (WsService/WsRest)
+Indica o nome da classe, do serviço, que o método atual pertence. O serviço foi declarado em [WsRestful](#wsrestful). O método pode ser declarado como `WsSerice` ou `WsRest` também.
+
+---
 ## Construindo um Método GET
+![Exemplo 1 de declaração de um método GET](/imgs/method_GET.png)
 ## Construindo um Método POST
 ## Construindo um Método PUT
 ## Construindo um Método DELETE
