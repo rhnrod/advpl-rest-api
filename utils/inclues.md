@@ -1,4 +1,17 @@
-| Includes            | Descrição                                                                                                                                                                                   |
+```
+
+    _  _   _            _           _           
+  _| || |_(_)          | |         | |          
+ |_  __  _|_ _ __   ___| |_   _  __| | ___  ___ 
+  _| || |_| | '_ \ / __| | | | |/ _` |/ _ \/ __|
+ |_  __  _| | | | | (__| | |_| | (_| |  __/\__ \
+   |_||_| |_|_| |_|\___|_|\__,_|\__,_|\___||___/
+                                                
+                                                
+
+```
+
+| Include            | Descrição                                                                                                                                                                                   |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Ap5Mail.ch**      | Include utilizada antigamente para disparo de e-Mail, não sendo mais necessária no dias de hoje, bastando utilizar a Include TOTVS.ch e a classe TMailMessage()                             |
 | **ApWebSrv.ch**     | Include utilizada para a chamada de WebServices                                                                                                                                             |
