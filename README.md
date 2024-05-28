@@ -49,6 +49,10 @@ A primeira coisa a se levar em consideração em um código fonte em ADVPL são 
 ![Includes necessários para consumir a API](/imgs/includes.png)
 Neste fonte específico fazemos uso dos includes `totvs.ch` e `restful.ch`. O primeiro traz consigo diversas funcionalidades padrão sendo indispensável a quase qualquer fonte ADVPL. Já o segundo, como o próprio nome sugere, é responsável por adicionar as funcionalidades voltadas para o consumo da API REST.
 
+> 💡**Atenção!**
+>
+> Para se conectar com uma base de dados externa (ou seja, outra além da base de teste [99,01]), é preciso utilizar também o o `#include topconn.ch`.
+
 ## WsRestFul – Entendendo a classe
 ![Estrutura básica de uma classe WSRestFul](/imgs/wsrestful.png)
 
