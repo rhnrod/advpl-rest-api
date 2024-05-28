@@ -36,11 +36,13 @@
 ---
 ## Introdução, Links e Referências
 💾 **INFORMAÇÕES PARA MELHOR APROVEITAR ESTE REPOSITÓRIO**
+
 Este repositório foi criado com o propósito de servir como base para meus estudos em ADVPL/ADVPL MVC/TLPP. O processo de documentar o aprendizado (*public learning*) me ajuda a fixar conceitos importantes e ainda me garante acesso a materiais apropriados para meu trabalho no dia-a-dia. Sinta-se livre para explorá-lo e espero que lhe seja útil!
 - Nos exemplos de sintaxe, os itens que aparecem entre colchetes são items opcionais. (i.e. `WsData [AS Integer]`)
 
 🔗 **LINKS ÚTEIS**
 1. [Documentação Oficial de REST - TOTVS TDN](https://tdn.totvs.com/display/public/framework/03.+Comandos+REST)
+2. [Classe JsonObject](https://tdn.totvs.com/display/tec/Classe+JsonObject)
 
 ## Includes
 A primeira coisa a se levar em consideração em um código fonte em ADVPL são os [**includes**](#includes "arquivos *.ch que importam códigos de outros fontes pro fonte atual."). 
@@ -175,7 +177,9 @@ O parâmetro `cId` pode ou não ser declarado, mas é melhor fazermos para ident
 >
 >No exemplo acima, omiti o ID deliberadamente, para fins didáticos, mas farei adiante um exemplo chamando dois IDs distintos.
 
-Ao invés de utilizar os parâmetros `QueryParms`, `URLParms` e `HeaderParms`.
+Ao invés de utilizar os parâmetros `QueryParms`, `URLParms` e `HeaderParms` usaremos o `WsReceive`.
+
+
 
 ## Construindo um Método POST
 ## Construindo um Método PUT

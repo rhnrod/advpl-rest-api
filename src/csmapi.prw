@@ -34,7 +34,7 @@ END WsRestful
 
 // INFO :: Método GET 
 WsMethod GET TODOS WsService clientes
-	
+
 	Local lRet  := .T.
 	Local oJson	:= JsonObject():New()
 	Local nPag       := 0
@@ -110,7 +110,7 @@ WsMethod POST NOVO_CLIENTE WsService clientes
 		EndIF
 	EndIF
 
-	
+
 	::SetResponse(oJson:toJson())
 
 Return lRet
@@ -126,7 +126,7 @@ WsMethod PUT ATUALIZAR WsService clientes
 	::SetContentType('application/json')
 
 	cBody := ::GetContent()
-	
+
 	IF Empty(cBody)
 		SetRestFault(400, ENCODEUTF8('Aparentemente há um erro no corpo da requisição.'))
 		Return .F.
@@ -155,7 +155,7 @@ WsMethod PUT ATUALIZAR WsService clientes
 		EndIF
 	EndIF
 
-	
+
 	::SetResponse(oJson:toJson())
 
 Return lRet
@@ -163,7 +163,7 @@ Return lRet
 
 // MÉTODO DELETE
 WsMethod DELETE DELETAR WsService clientes
-	
+
 	Local lRet 		:= .F.
 
 	::SetContentType('application/json')
@@ -216,7 +216,7 @@ Return lRet
 	@return oJsonRet, object, retorna um Json contendo o total de registros da tabela e os clientes por página 
 	/*/
 function u_getCli(pags,qtds)
-    Local oJson      := JsonObject():new()
+	Local oJson      := JsonObject():new()
 	Local oJsonRet   := JsonObject():new()
 	Local aClientes  := {}
 	Local cAlias     := GetNextAlias()
@@ -345,7 +345,7 @@ Return oJsonRet
 	@return oJsonRet, object, retorna um Json contendo o total de registros da tabela e os clientes por página 
 	/*/
 Function u_postCl(json)
-	
+
 	Local cJson 	:= json
 	Local oJson 	:= JsonObject():New()
 
@@ -437,7 +437,7 @@ Return oJson
 	@return oJsonRet, object, retorna um Json contendo o total de registros da tabela e os clientes por página 
 /*/
 Function u_putCli(body,cod,loja)
-	
+
 	Local cAlias	:= GetNextAlias()
 	Local oJson 	:= JsonObject():New()
 
@@ -589,7 +589,7 @@ Return oJson
 	@return oJsonRet, object, retorna um Json contendo o total de registros da tabela e os clientes por página 
 	/*/
 Function u_delCli(cod,loja)
-	
+
 	Local cAlias	:= GetNextAlias()
 	Local cCod		:= ""
 	Local cLoja		:= ""
@@ -612,10 +612,10 @@ Function u_delCli(cod,loja)
 			//Tenta realizar o Commit
 			If oModel:CommitData()
 
-				
+
 				oJsonResp := JsonObject():New()
 				oJsonResp['message'] := EncodeUTF8('Registro excluído com sucesso.')
-				
+
 				Return oJsonResp
 			EndIF
 		EndIf
