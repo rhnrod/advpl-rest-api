@@ -13,26 +13,39 @@
 ---
 
 **Índice**
-1. [Introdução, Links e Referências](#introdução-links-e-referências)
-2. [Includes](#includes)
-2. [WsRestFul – Entendo a classe](#wsrestful--entendendo-a-classe)
-    1. [Entendendo o cabeçalho](#entendendo-o-cabeçalho)
-        1. [Sintaxe](#sintaxe)
-        2. [WsRestFul](#wsrestful)
-        3. [Description](#description)
-        4. [Format](#format)
-    2. [Entendendo o conteúdo](#entendendo-o-conteúdo)
-        1. [WsData](#wsdata)
-        2. [WsMethod](#wsmethod)
-    3. [Entendendo os métodos](#entendendo-os-métodos)
-        1. [GET](#get)
-        2. [POST](#post)
-        3. [PUT](#put)
-        4. [DELETE](#delete)
-3. [Construindo um Método GET](#construindo-um-método-get)
-4. [Construindo um Método POST](#construindo-um-método-post)
-5. [Construindo um Método PUT](#construindo-um-método-put)
-6. [Construindo um Método DELETE](#construindo-um-método-delete)
+- [Como consumir uma API REST](#como-consumir-uma-api-rest)
+  - [Introdução, Links e Referências](#introdução-links-e-referências)
+  - [Includes](#includes)
+  - [WsRestFul – Entendendo a classe](#wsrestful--entendendo-a-classe)
+    - [Entendendo o cabeçalho](#entendendo-o-cabeçalho)
+      - [Sintaxe](#sintaxe)
+      - [WsRestFul](#wsrestful)
+      - [Description](#description)
+      - [Security](#security)
+      - [Format](#format)
+      - [SSL ONLY](#ssl-only)
+    - [Entendendo o conteúdo](#entendendo-o-conteúdo)
+      - [WSData](#wsdata)
+        - [Sintaxe](#sintaxe-1)
+        - [cVarName](#cvarname)
+        - [cVarType](#cvartype)
+        - [OPTIONAL](#optional)
+      - [WSMethod](#wsmethod)
+      - [Sintaxe](#sintaxe-2)
+        - [WsMethod](#wsmethod-1)
+        - [Description](#description-1)
+        - [WsSyntax](#wssyntax)
+        - [Path](#path)
+        - [TTalk](#ttalk)
+    - [Entendendo a declaração dos métodos](#entendendo-a-declaração-dos-métodos)
+      - [WsMethod](#wsmethod-2)
+      - [WsSyntax](#wssyntax-1)
+      - [WsReceive (QueryParms/PathParms/HeaderParms)](#wsreceive-queryparmspathparmsheaderparms)
+      - [WsRestful (WsService/WsRest)](#wsrestful-wsservicewsrest)
+  - [Construindo um Método GET](#construindo-um-método-get)
+  - [Construindo um Método POST](#construindo-um-método-post)
+  - [Construindo um Método PUT](#construindo-um-método-put)
+  - [Construindo um Método DELETE](#construindo-um-método-delete)
 ---
 ## Introdução, Links e Referências
 💾 **INFORMAÇÕES PARA MELHOR APROVEITAR ESTE REPOSITÓRIO**
@@ -51,7 +64,7 @@ Neste fonte específico fazemos uso dos includes `totvs.ch` e `restful.ch`. O pr
 
 > 💡**Atenção!**
 >
-> Para se conectar com uma base de dados externa (ou seja, outra além da base de teste [99,01]), é preciso utilizar também o o `#include topconn.ch`.
+> Note que algumas funções importantes só estarão disponíveis através de outros includes, como por exemplo, a função **TCQuery** através do `#include topconn.ch`. Portanto, é interessante ver quais outros includes podem ser interessantes utilizar. Aqui segue uma [lista de includes úteis](/utils/inclues.md) no dia-a-dia.
 
 ## WsRestFul – Entendendo a classe
 ![Estrutura básica de uma classe WSRestFul](/imgs/wsrestful.png)
@@ -181,8 +194,7 @@ O parâmetro `cId` pode ou não ser declarado, mas é melhor fazermos para ident
 >
 >No exemplo acima, omiti o ID deliberadamente, para fins didáticos, mas farei adiante um exemplo chamando dois IDs distintos.
 
-Ao invés de utilizar os parâmetros `QueryParms`, `URLParms` e `HeaderParms` usaremos o `WsReceive`.
-
+Ao invés de utilizar os parâmetros `QueryParms`, `URLParms` e `HeaderParms` usaremos o `WsReceive`. O
 
 
 ## Construindo um Método POST
